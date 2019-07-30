@@ -17,7 +17,7 @@ package json
 import (
 	"bytes"
 	"encoding/binary"
-	"encoding/json"
+	json "github.com/pquerna/ffjson/ffjson"
 	"reflect"
 )
 
