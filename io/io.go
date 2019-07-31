@@ -30,7 +30,7 @@ func Join(c1 io.ReadWriteCloser, c2 io.ReadWriteCloser) (inCount int64, outCount
 		defer from.Close()
 		defer wait.Done()
 
-		buf := pool.GetBuf(16 * 1024)
+		buf := pool.GetBuf(512 * 1024)
 		defer pool.PutBuf(buf)
 		*count, _ = io.CopyBuffer(to, from, buf)
 	}
